@@ -1,0 +1,1 @@
+SELECT * FROM book WHERE DAY(date_created) > 20;
