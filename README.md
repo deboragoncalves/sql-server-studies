@@ -1,4 +1,5 @@
 # SQL Server Studies
 
-## In development.
+## SQL Server: Introdução ao SQL com Microsoft SQL Server 2017
+
 
