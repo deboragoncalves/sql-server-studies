@@ -3,7 +3,7 @@
 USE book_store;
 GO
 
---	Ceiling: arrendondar para cima. Argumentos devem estar com separação de . 
+-- Ceiling: arrendondar para cima. Argumentos devem estar com separação de . 
 
 SELECT CEILING (13.50);
 
