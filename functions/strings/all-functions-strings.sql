@@ -1,4 +1,5 @@
 -- Funções - String
+
 USE book_store;
 GO
 
