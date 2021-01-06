@@ -2,3 +2,4 @@ USE book_store;
 GO
 
 ALTER TABLE book ADD DATE_CREATED DATE NOT NULL;
+
