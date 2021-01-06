@@ -1,0 +1,5 @@
+-- NOT OR
+
+-- SELECT * FROM book;
+
+SELECT * FROM book WHERE NOT (AUTHOR = 'JK Rowlling' OR YEAR(DATE_CREATED) > 2010);
