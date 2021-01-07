@@ -24,3 +24,6 @@ INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('O Jor
 -- Insert com FK na tabela clientes
 
 INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUES (6, 0000000000, 'João da Silva', '(21) 9999-1111', 0);
+
+INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUES (6, 0000000000, 'Eduardo', '(11) 91919-1919', 1);
+
