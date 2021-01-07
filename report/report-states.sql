@@ -30,7 +30,12 @@ SELECT * FROM vw_prices_quantities_books;
 
 SELECT * FROM vw_total_sales_month;
 
+-- Relatório 3: vendas por livro e por mês
 
+CREATE OR ALTER VIEW vw_total_sales_month_book AS (SELECT BOOK.NAME, (VW_BOOK.PRICE * VW_BOOK.QUANTITY) AS TOTAL_SALES_BOOK
+FROM book INNER JOIN vw_prices_quantities_books VW_BOOK ON VW_BOOK.ID_BOOK = BOOK.ID WHERE BOOK.ID = 7);
+
+SELECT * FROM vw_total_sales_month_book;
 
 
 
