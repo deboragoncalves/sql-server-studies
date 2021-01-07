@@ -20,3 +20,7 @@ INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('Harry
 INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('O Chamado de Cuco', 'JK Rowlling', 'Ficção', '2010-02-05');
 
 INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('O Jornal Nacional', 'William Bonner', 'Jornalismo', '2007-05-07');
+
+-- Insert com FK na tabela clientes
+
+INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUES (6, 0000000000, 'João da Silva', '(21) 9999-1111', 0);

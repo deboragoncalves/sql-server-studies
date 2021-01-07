@@ -11,3 +11,7 @@ SELECT CONVERT(VARCHAR, DATE_CREATED, 101) AS [DATE TO VARCHAR] FROM book WHERE 
 -- Converter inteiro para varchar e concatenar
 
 SELECT CONCAT('The book was created in ', CONVERT(VARCHAR, YEAR(DATE_CREATED))) AS [YEAR - BOOK CREATED] FROM book WHERE ID = 6;
+
+-- Converter inteiro para decimal: decimal (numero de casas numericas, numero de casas depois da virgula).
+
+SELECT CONVERT(DECIMAL(10, 3), 11);
