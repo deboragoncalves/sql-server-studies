@@ -21,7 +21,7 @@ FROM vw_same_books_client;
 -- View: inner join pelo id. exibir ids, quantidade e preço livro. no where inserir datas.
 -- View: inner join pelo id. exibir nome livro, faturado e sum.
 
-CREATE OR ALTER VIEW vw_prices_quantities_books AS (SELECT BP.ID_BOOK AS BOOK_IDENTITY, BP.PRICE, BS.ID_BOOK, BS.QUANTITY FROM books_prices BP INNER JOIN books_sales BS ON BP.ID_BOOK = BS.ID_BOOK WHERE YEAR(BS.DATE_SALE) = 2020 AND MONTH(BS.DATE_SALE) = 11);
+CREATE OR ALTER VIEW vw_prices_quantities_books AS (SELECT BP.ID_BOOK AS BOOK_IDENTITY, BP.PRICE, BS.ID_BOOK, BS.QUANTITY FROM books_prices BP INNER JOIN books_sales BS ON BP.ID_BOOK = BS.ID_BOOK WHERE YEAR(BS.DATE_SALE) = 2020 AND MONTH(BS.DATE_SALE) = 10);
 
 CREATE OR ALTER VIEW vw_total_sales_month AS (SELECT BOOK.NAME, (VW_BOOK.PRICE * VW_BOOK.QUANTITY) AS TOTAL_SALES_BOOK
 FROM book INNER JOIN vw_prices_quantities_books VW_BOOK ON VW_BOOK.ID_BOOK = BOOK.ID);
@@ -36,6 +36,15 @@ CREATE OR ALTER VIEW vw_total_sales_month_book AS (SELECT BOOK.NAME, (VW_BOOK.PR
 FROM book INNER JOIN vw_prices_quantities_books VW_BOOK ON VW_BOOK.ID_BOOK = BOOK.ID WHERE BOOK.ID = 7);
 
 SELECT * FROM vw_total_sales_month_book;
+
+-- Relatório 4: vendas por cliente e por mês
+
+CREATE OR ALTER VIEW vw_total_sales_month_client AS (SELECT CLIENT.NAME, (VW_BOOK.PRICE * VW_BOOK.QUANTITY) AS TOTAL_SALES_BOOK
+FROM client INNER JOIN vw_prices_quantities_books VW_BOOK ON VW_BOOK.ID_BOOK = CLIENT.ID_BOOK);
+
+SELECT * FROM vw_total_sales_month_client;
+
+
 
 
 
