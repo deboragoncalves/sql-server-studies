@@ -1,0 +1,18 @@
+USE book_store;
+GO
+
+-- Adicionar coluna
+
+ALTER TABLE book ADD DATE_CREATED DATE NOT NULL;
+
+-- Alterar coluna para not null
+
+ALTER TABLE client ALTER COLUMN FIRST_BUY BIT NOT NULL;
+
+-- PK: add constraint nome_constante 
+-- PRIMARY KEY CLUSTERED (nome_campo)
+
+ALTER TABLE client ADD CONSTRAINT PK_ID_CLIENT PRIMARY KEY CLUSTERED (ID);
+
+ALTER TABLE book ADD CONSTRAINT PK_ID_BOOK PRIMARY KEY CLUSTERED (ID);
+
