@@ -1,1 +1,0 @@
-SELECT * FROM book WHERE date_created > '2001-10-01';

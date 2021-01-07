@@ -1,3 +1,0 @@
--- LIKE
-
-SELECT * FROM book WHERE name LIKE '%Potter' OR DAY(DATE_CREATED) > 31;

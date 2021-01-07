@@ -1,1 +1,0 @@
-SELECT * FROM book WHERE MONTH(date_created) > 2;

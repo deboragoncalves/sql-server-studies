@@ -1,0 +1,75 @@
+-- Consultas select
+
+USE book_store;
+GO
+
+-- Operações
+
+-- SUM
+
+SELECT SUM(ID) AS SOMA_ID FROM client;
+
+-- MAX
+
+SELECT SUM(ID) AS SOMA_ID, MIN(YEAR(DATE_CREATED)) AS MIN_ANO_CRIACAO, MAX(MONTH(DATE_CREATED)) AS MAX_MES_CRIACAO FROM book;
+
+-- MIN
+
+SELECT SUM(ID) AS SOMA_ID, MIN(YEAR(DATE_CREATED)) AS MIN_ANO_CRIACAO FROM book;
+
+-- AVG
+
+SELECT SUM(ID) AS SOMA_ID, MIN(YEAR(DATE_CREATED)) AS MIN_ANO_CRIACAO, MAX(MONTH(DATE_CREATED)) AS MAX_MES_CRIACAO, AVG(DAY(DATE_CREATED)) AS MEDIA_DIAS_CRIACAO FROM book;
+
+--  ORDER BY: ordem alfabética ASC
+
+SELECT * FROM client ORDER BY NAME;
+
+--  ORDER BY: ordem alfabética DESC
+
+SELECT * FROM client ORDER BY NAME DESC;
+
+-- ORDER BY: 2 fields. Ordena primeiro o primeiro comando do ORDER BY, depois o segundo.
+
+SELECT * FROM book ORDER BY name DESC, YEAR(DATE_CREATED);
+
+-- COUNT usando WHERE
+
+SELECT SUM(ID) AS SOMA_ID, MIN(YEAR(DATE_CREATED)) AS MIN_ANO_CRIACAO, MAX(MONTH(DATE_CREATED)) AS MAX_MES_CRIACAO, AVG(DAY(DATE_CREATED)) AS MEDIA_DIAS_CRIACAO, COUNT(ID) AS NUMERO_LIVROS FROM book WHERE ID > 6;
+
+-- DISTINCT
+
+SELECT DISTINCT [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY] FROM client;
+
+-- DISTINCT com WHERE, usando alias
+
+SELECT DISTINCT [CPF] AS REGISTRO, [NAME] AS NOME FROM client WHERE FIRST_BUY = 0;
+
+-- GROUP BY: agrupar dados com o mesmo CPF
+
+SELECT CPF, NAME FROM client GROUP BY CPF, NAME;
+
+-- GROUP BY: agrupar dados com o mesmo CPF usando HAVING
+
+SELECT CPF, NAME FROM client GROUP BY CPF, NAME HAVING NAME < 'Felipe';
+
+-- Subqueries: select dentro do from. opção de usar o having
+
+-- SELECT CPF, NAME FROM client GROUP BY CPF, NAME HAVING NAME < 'Felipe';
+
+SELECT CPF, NAME, PHONE_NUMBER FROM client WHERE NAME IN (SELECT NAME FROM client WHERE NAME > 'Felipe') GROUP BY CPF, NAME, PHONE_NUMBER;
+
+-- TOP, DISTINCT junto com WHERE
+
+SELECT DISTINCT TOP 3 [CPF] AS IDENTIFICADOR, [NAME] AS NOME, [PHONE_NUMBER] AS TELEFONE FROM client WHERE NAME = 'Eduardo';
+
+-- CASE/WHEN: WHEN - condicional, utilizando >, <, =... THEN - valor que irá adicionado na nova coluna
+-- ELSE: não satisfaz as condições do when
+
+SELECT NAME, CATEGORY,
+CASE	
+	WHEN CATEGORY = 'Ficção' OR NAME = 'Harry Potter' THEN '13 a 17 anos' 
+	WHEN CATEGORY = 'Jornalismo' THEN 'Acima de 18 anos'
+	WHEN CATEGORY = 'Biografia' THEN 'Acima de 18 anos'
+	ELSE 'Não possui classificação' END
+FROM book;

@@ -1,5 +1,0 @@
--- NOT AND
-
--- SELECT * FROM book;
-
-SELECT * FROM book WHERE NOT (AUTHOR = 'Boni' AND YEAR(DATE_CREATED) > 2010);

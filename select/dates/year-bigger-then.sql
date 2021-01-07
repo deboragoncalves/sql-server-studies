@@ -1,1 +1,0 @@
-SELECT * FROM book WHERE YEAR(date_created) > 2000;

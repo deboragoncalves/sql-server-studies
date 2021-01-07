@@ -1,5 +1,0 @@
--- AND
-
--- SELECT * FROM book;
-
-SELECT * FROM book WHERE AUTHOR = 'JK Rowlling' AND YEAR(DATE_CREATED) > 2000; 

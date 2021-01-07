@@ -1,1 +1,0 @@
-SELECT * FROM client WHERE first_buy = 0;
