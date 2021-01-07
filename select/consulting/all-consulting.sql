@@ -53,6 +53,10 @@ SELECT CPF, NAME FROM client GROUP BY CPF, NAME;
 
 SELECT CPF, NAME FROM client GROUP BY CPF, NAME HAVING NAME < 'Felipe';
 
+-- GROUP BY: agrupar dados de acordo com o maior ID
+
+SELECT CPF, MAX(ID) AS [BIGGER ID] FROM client GROUP BY CPF;
+
 -- Subqueries: select dentro do from. opção de usar o having
 
 -- SELECT CPF, NAME FROM client GROUP BY CPF, NAME HAVING NAME < 'Felipe';
@@ -73,3 +77,14 @@ CASE
 	WHEN CATEGORY = 'Biografia' THEN 'Acima de 18 anos'
 	ELSE 'Não possui classificação' END
 FROM book;
+
+-- CASE WHEN junto com GROUP BY, classificando os estados
+
+SELECT CPF, PHONE_NUMBER, NAME,
+CASE
+	WHEN PHONE_NUMBER LIKE '%(11)%' THEN 'SP'
+	WHEN PHONE_NUMBER LIKE '%(21)%' THEN 'RJ'
+	WHEN PHONE_NUMBER LIKE '%(47)%' THEN 'SC'
+	ELSE 'Estado não possui classificação' END
+FROM client
+GROUP BY CPF, PHONE_NUMBER, NAME
