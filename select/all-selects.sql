@@ -9,6 +9,8 @@ SELECT id, cpf, name, phone_number, first_buy FROM client;
 
 -- Todos os campos
 
+SELECT * FROM book;
+
 SELECT * FROM client;
 
 SELECT * FROM books_prices;
