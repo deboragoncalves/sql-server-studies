@@ -11,7 +11,9 @@ SELECT id, cpf, name, phone_number, first_buy FROM client;
 
 SELECT * FROM client;
 
-SELECT * from books_prices;
+SELECT * FROM books_prices;
+
+SELECT * FROM books_sales;
 
 -- Form
 
