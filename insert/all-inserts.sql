@@ -27,3 +27,7 @@ INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUE
 
 INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUES (6, 0000000000, 'Eduardo', '(11) 91919-1919', 1);
 
+-- Insert com FK na tabela de preços de livros
+
+INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (6, 35.50);
+

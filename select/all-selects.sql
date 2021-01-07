@@ -11,6 +11,8 @@ SELECT id, cpf, name, phone_number, first_buy FROM client;
 
 SELECT * FROM client;
 
+SELECT * from books_prices;
+
 -- Form
 
 SELECT * FROM book_store.dbo.client;
