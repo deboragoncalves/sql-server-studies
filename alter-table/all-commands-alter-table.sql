@@ -3,7 +3,7 @@ GO
 
 -- Adicionar coluna
 
-ALTER TABLE book ADD DATE_CREATED DATE NOT NULL;
+ALTER TABLE book ADD DATE_CREATED DATE NOT NULL DEFAULT GETDATE();
 
 -- Alterar coluna para not null
 
