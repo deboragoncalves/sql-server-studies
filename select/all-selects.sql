@@ -15,6 +15,8 @@ SELECT * FROM client;
 
 SELECT * FROM books_prices;
 
+SELECT * FROM new_books_prices;
+
 SELECT * FROM books_sales;
 
 -- Form

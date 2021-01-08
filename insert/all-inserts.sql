@@ -33,6 +33,12 @@ INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUE
 
 INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (6, 35.50), (7, 40.50);
 
+INSERT INTO new_books_prices (ID_BOOK, PRICE) VALUES (6, 45.50), (7, 42.50);
+
+-- Inserir dados da tabela de novos preços na tabela de preços
+
+INSERT into books_prices (ID_BOOK, PRICE) SELECT ID_BOOK, PRICE FROM new_books_prices;
+
 INSERT INTO books_sales (ID_BOOK, ID_CLIENT, QUANTITY, DATE_SALE, SALES_PERSON) VALUES (6, 1, 3, '2020-10-02', 'Amanda');
 
 INSERT INTO books_sales (ID_BOOK, ID_CLIENT, QUANTITY, DATE_SALE, SALES_PERSON) VALUES (6, 1, 2, '2020-10-22', 'Joana');
