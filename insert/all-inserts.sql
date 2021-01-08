@@ -29,9 +29,9 @@ INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUE
 
 -- Insert com FK na tabela de preços de livros e livros vendidos
 
-INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (6, 35.50);
+-- Insert com várias linhas
 
-INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (7, 40.50);
+INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (6, 35.50), (7, 40.50);
 
 INSERT INTO books_sales (ID_BOOK, ID_CLIENT, QUANTITY, DATE_SALE, SALES_PERSON) VALUES (6, 1, 3, '2020-10-02', 'Amanda');
 
