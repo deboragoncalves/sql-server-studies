@@ -7,6 +7,10 @@ INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('Harry
 
 INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('O Chamado de Cuco', 'JK Rowlling', 'Ficção', '2010-02-05'), ('O Jornal Nacional', 'William Bonner', 'Jornalismo', '2007-05-07');
 
+-- Teste insert data inválida
+
+INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('Seja Foda!', 'Caio Carneiro', 'Auto ajuda', '2019-13-33');
+
 -- Inserir com date valor default
 
 INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY]) VALUES ('Agassi', 'William Bonner', 'Biografia');
@@ -23,6 +27,12 @@ INSERT INTO client ([ID_BOOK], [CPF], [NAME], [PHONE_NUMBER], [FIRST_BUY]) VALUE
 -- Insert com várias linhas
 
 INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (1, 35.50), (2, 40.50);
+
+-- Teste insert valor negativo: criar check
+
+INSERT INTO books_prices (ID_BOOK, PRICE) VALUES (4, -30.00);
+
+INSERT INTO new_books_prices (ID_BOOK, PRICE) VALUES (3, -30.00);
 
 INSERT INTO new_books_prices (ID_BOOK, PRICE) VALUES (1, 45.50), (2, 42.50);
 

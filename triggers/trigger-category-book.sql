@@ -20,5 +20,3 @@ END;
 -- Deletar trigeer
 
 DROP TRIGGER IF EXISTS TG_CATEGORY_BOOK;
-
-SELECT * FROM book;
