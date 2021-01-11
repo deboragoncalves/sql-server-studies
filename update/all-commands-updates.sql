@@ -9,6 +9,8 @@ UPDATE [BOOK] SET [CATEGORY] = 'Ficção' WHERE [ID] IN (6, 7);
 
 UPDATE [BOOK] SET [CATEGORY] = 'Jornalismo' WHERE SUBSTRING([CATEGORY], 1, 3) = 'Rep';
 
+UPDATE [BOOK] SET [AUTHOR] = 'Katia Rubio' WHERE SUBSTRING([AUTHOR], 1, 3) = 'Ber';
+
 UPDATE [NEW_BOOKS_PRICES] SET [PRICE] = 40.50 WHERE [ID_BOOK] = 6;
 
 -- Atualizar tabela de preços com base na tabela de novos preços: inner join

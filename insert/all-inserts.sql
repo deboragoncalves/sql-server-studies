@@ -10,6 +10,7 @@ INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY], [DATE_CREATED]) VALUES ('O Cha
 -- Inserir com date valor default
 
 INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY]) VALUES ('Agassi', 'William Bonner', 'Biografia');
+INSERT INTO [book] ([NAME], [AUTHOR], [CATEGORY]) VALUES ('Transformando Suor em Ouro', 'Bernardinho', 'Biografia');
 
 -- Insert com FK na tabela clientes
 
