@@ -36,4 +36,6 @@ EXEC AGE_CLIENT 6, '1995-10-21';
 
 -- Retornar colunas da tabela e outros dados: tamanho, se aceita nulo, tipo de dado, etc.
 
+-- Parametros opcionais
+
 EXEC sp_columns @table_name = 'BOOK', @table_owner = 'dbo';
