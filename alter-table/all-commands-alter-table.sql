@@ -3,7 +3,13 @@ GO
 
 -- Adicionar coluna, default
 
-ALTER TABLE book ADD DATE_CREATED DATE NOT NULL DEFAULT GETDATE();
+ALTER TABLE BOOK ADD DATE_CREATED DATE NOT NULL DEFAULT GETDATE();
+
+-- Adicionar idade e data de nascimento - tabela clientes
+
+ALTER TABLE CLIENT ADD AGE INT NOT NULL DEFAULT 0;
+
+ALTER TABLE CLIENT ADD DATE_BIRTH DATE NOT NULL DEFAULT GETDATE();
 
 -- Alterar coluna para not null
 
