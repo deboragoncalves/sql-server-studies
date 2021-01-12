@@ -1,0 +1,24 @@
+USE book_store;
+GO
+
+-- Criar função que retorna uma tabela com os livros escritos pelo autor
+
+-- Deleta função se existe
+
+IF OBJECT_ID('BOOKS_AUTHOR', 'FN') IS NOT NULL
+DROP FUNCTION BOOKS_AUTHOR;
+GO
+
+CREATE FUNCTION BOOKS_AUTHOR (@AUTHOR VARCHAR(100)) 
+RETURNS TABLE AS
+RETURN SELECT * FROM BOOK WHERE AUTHOR = @AUTHOR;
+
+SELECT NAME, AUTHOR FROM dbo.BOOKS_AUTHOR('JK Rowlling');
+
+-- Alterar função: número de livros que escritos pelo autor
+
+ALTER FUNCTION BOOKS_AUTHOR (@AUTHOR VARCHAR(100)) 
+RETURNS TABLE AS
+RETURN SELECT COUNT(*) AS ALL_BOOKS FROM BOOK WHERE AUTHOR = @AUTHOR;
+
+SELECT * FROM dbo.BOOKS_AUTHOR('JK Rowlling');
